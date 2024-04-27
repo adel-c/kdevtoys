@@ -1,3 +1,5 @@
+package com.ace.devtoys
+
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
@@ -15,6 +17,7 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 import kdevtoys.composeapp.generated.resources.Res
 import kdevtoys.composeapp.generated.resources.compose_multiplatform
 
+//expect val greeter: Greeter
 @OptIn(ExperimentalResourceApi::class)
 @Composable
 @Preview
@@ -23,10 +26,10 @@ fun App() {
         var showContent by remember { mutableStateOf(false) }
         Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
             Button(onClick = { showContent = !showContent }) {
-                Text("Click me!")
+                Text("Click mex!")
             }
             AnimatedVisibility(showContent) {
-                val greeting = remember { Greeting().greet() }
+                val greeting = remember {"coucou"}
                 Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
                     Image(painterResource(Res.drawable.compose_multiplatform), null)
                     Text("Compose: $greeting")

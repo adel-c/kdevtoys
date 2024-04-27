@@ -1,7 +1,9 @@
-class Greeting {
+import com.ace.devtoys.Greeter
+
+class Greeting:Greeter {
     private val platform = getPlatform()
 
-    fun greet(): String {
+    override  fun greet(): String {
         return "Hello, ${platform.name}!"
     }
 }
