@@ -17,7 +17,7 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 import kdevtoys.composeapp.generated.resources.Res
 import kdevtoys.composeapp.generated.resources.compose_multiplatform
 
-//expect val greeter: Greeter
+expect val greeter: Greeter
 @OptIn(ExperimentalResourceApi::class)
 @Composable
 @Preview
@@ -29,7 +29,7 @@ fun App() {
                 Text("Click mex!")
             }
             AnimatedVisibility(showContent) {
-                val greeting = remember {"coucou"}
+                val greeting = remember {greeter.greet()}
                 Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
                     Image(painterResource(Res.drawable.compose_multiplatform), null)
                     Text("Compose: $greeting")
